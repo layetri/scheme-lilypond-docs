@@ -2,7 +2,7 @@
 
 ### Introduction
 This document aims at providing a comprehensive guide to get the Scheme language up and running within the IntelliJ IDEA IDE from JetBrains.
-Note: I'll be updating this guide for Windows, as the current walktrough is macOS-only.
+Note: I'll be updating this guide for Windows, as the current walkthrough is macOS-only. Second note: This guide assumes you already have installed Racket on your system.
 
 ### Table of Contents
 1. [Links](#links)
@@ -32,7 +32,7 @@ It's now time to install the Scheme plugin. Here's the basic steps:
 
 ## Preference Tweaking
 #### Creating a working directory for Scheme exercises
-This is a step for HKU students: because it's kinda useful to keep all your work in one place, I advice to create a new project in IDEA and storing all your Scheme stuff in it. Note that this folder name must not contain spaces in order for Racket to work.
+This is a step for HKU students: because it's kinda useful to keep all your work in one place, I recommend you to create a new project in IDEA and storing all your Scheme stuff in it. Note that this folder name must not contain spaces in order for Racket to work.
 
 #### Creating a run configuration for Racket
 When you've created your new project, it's time to add some useful shortcuts for Racket.
