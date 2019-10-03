@@ -8,6 +8,7 @@ Note: I'll be updating this guide for Windows, as the current walktrough is macO
 1. [Links](#links)
 1. [Installation](#installation)
 1. [Preference Tweaking](#preference-tweaking)
+1. [Concluding](#concluding)
 
 ## Links
 #### Necessary
@@ -72,7 +73,7 @@ IMPORTANT NOTE: because IDEA doesn't natively support Scheme, it'll try to creat
 
 ## Concluding
 You can now do the following in IDEA:
-- Create new Scheme files via "Project Directory" > right-click > `New` > `Scheme File`
+- Create new Scheme files via "Project Folder" > right-click > `New` > `Scheme File`
 - Run your Scheme file within IDEA using your custom keyboard shortcut
 
 IDEA also:
