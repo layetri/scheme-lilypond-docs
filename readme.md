@@ -1,7 +1,7 @@
 # HKU Scheme to LilyPond
 
 ### Introduction
-This README briefly explains all functions included in the HKU LilyPond extension for Racket found at marcdinkum/csd. If you discover any errors in this document, please contact me at the e-mail address on my profile.
+This README briefly explains all functions included in the HKU LilyPond extension for Racket found at [marcdinkum/csd](https://github.com/marcdinkum/csd). If you discover any errors in this document, please contact me at the e-mail address on my profile.
 
 ### Table of Contents
 1. [`make-phrase`](#make-phrase)
