@@ -4,21 +4,23 @@
 This README briefly explains all functions included in the HKU LilyPond extension for Racket found at marcdinkum/csd.
 
 ### Table of Contents
-1. `make-phrase`
-1. `make-parallel`
-1. `note-to-number`
-1. `notes-to-numbers`
-1. `transpose-natural`
-1. `transpose-naturals`
-1. `transpose-phrase`
-1. `scale-length`
-1. `merge-phrases`
-1. `merge-phraselist`
-1. `repeat-phrase`
-1. `reverse-phrase`
-1. `apply-transform`
+1. [`make-phrase`](#make-phrase)
+1. [`make-parallel`](#make-parallel)
+1. [`note-to-number`](#note-to-number)
+1. [`notes-to-numbers`](#notes-to-numbers)
+1. [`transpose-natural`](#transpose-natural)
+1. [`transpose-naturals`](#transpose-naturals)
+1. [`transpose-note`](#transpose-note)
+1. [`transpose-phrase`](#transpose-phrase)
+1. [`scale-length`](#scale-length)
+1. [`merge-phrases`](#merge-phrases)
+1. [`merge-phraselist`](#merge-phraselist)
+1. [`repeat-phrase`](#repeat-phrase)
+1. [`reverse-phrase`](#reverse-phrase)
+1. [`apply-transform`](#apply-transform)
 
-## 1. `make-phrase`
+## `make-phrase`
+
 ### Description
 Converts a given melody to a timed phrase.
 ### Arguments
@@ -27,7 +29,9 @@ Converts a given melody to a timed phrase.
 ### Syntax
 `(make-phrase melody rhythm)`
 
-## 2. `make-parallel`
+
+## `make-parallel`
+
 ### Description
 Combines two or more voices into a parallel structure.
 ### Arguments
@@ -35,7 +39,9 @@ Combines two or more voices into a parallel structure.
 ### Syntax
 `(make-parallel phrases)`
 
-## 3. `note-to-number`
+
+## `note-to-number`
+
 ### Description
 Translates a note name to a note number.
 ### Arguments
@@ -43,7 +49,9 @@ Translates a note name to a note number.
 ### Syntax
 `(note-to-number note)`
 
-## 4. `notes-to-numbers`
+
+## `notes-to-numbers`
+
 ### Description
 Translates a list of absolute note names to note numbers.
 ### Arguments
@@ -51,7 +59,9 @@ Translates a list of absolute note names to note numbers.
 ### Syntax
 `(notes-to-numbers notes)`
 
-## 5. `transpose-natural`
+
+## `transpose-natural`
+
 ### Description
 Transposes a natural note symbolically.
 ### Arguments
@@ -60,7 +70,9 @@ Transposes a natural note symbolically.
 ### Syntax
 `(transpose-natural note steps)`
 
-## 6. `transpose-naturals`
+
+## `transpose-naturals`
+
 ### Description
 Transposes a list of natural notes symbolically.
 ### Arguments
@@ -69,7 +81,9 @@ Transposes a list of natural notes symbolically.
 ### Syntax
 `(make-phrase melody rhythm)`
 
-## 7. `transpose-note`
+
+## `transpose-note`
+
 ### Description
 Transposes a natural note numerically.
 ### Arguments
@@ -78,7 +92,9 @@ Transposes a natural note numerically.
 ### Syntax
 `(transpose-note note)`
 
-## 8. `transpose-phrase`
+
+## `transpose-phrase`
+
 ### Description
 Transposes a `phrase` from `make-phrase` numerically.
 ### Arguments
@@ -87,7 +103,9 @@ Transposes a `phrase` from `make-phrase` numerically.
 ### Syntax
 `(make-phrase phrase steps)`
 
-## 9. `scale-note-length`
+
+## `scale-note-length`
+
 ### Description
 Scales the length of a given note by a given factor.
 ### Arguments
@@ -96,7 +114,9 @@ Scales the length of a given note by a given factor.
 ### Syntax
 `(scale-note-length note factor)`
 
-## 9. `scale-length`
+
+## `scale-length`
+
 ### Description
 Scales the lengths of all notes in a given phrase.
 ### Arguments
@@ -105,47 +125,56 @@ Scales the lengths of all notes in a given phrase.
 ### Syntax
 `(scale-length phrase factor)`
 
-## 10. `merge-phrases`
-### Description
-Converts a given melody to a timed phrase.
-### Arguments
-- `melody` in note numbers
-- `rhythm` in note length numbers (list must be the same length as the number of notes)
-### Syntax
-`(make-phrase melody rhythm)`
 
-## 11. `merge-phraselist`
-### Description
-Converts a given melody to a timed phrase.
-### Arguments
-- `melody` in note numbers
-- `rhythm` in note length numbers (list must be the same length as the number of notes)
-### Syntax
-`(make-phrase melody rhythm)`
+## `merge-phrases`
 
-## 12. `repeat-phrase`
 ### Description
-Converts a given melody to a timed phrase.
+Merges two or more phrases into a single phrase.
 ### Arguments
-- `melody` in note numbers
-- `rhythm` in note length numbers (list must be the same length as the number of notes)
+- `phrase` is a list of note/length pairs. Note: this function needs at least two instances of `phrase` to execute
 ### Syntax
-`(make-phrase melody rhythm)`
+`(merge-phrases [phrases])`
 
-## 13. `reverse-phrase`
-### Description
-Converts a given melody to a timed phrase.
-### Arguments
-- `melody` in note numbers
-- `rhythm` in note length numbers (list must be the same length as the number of notes)
-### Syntax
-`(make-phrase melody rhythm)`
 
-## 14. `apply-transform`
+## `merge-phraselist`
+
 ### Description
-Converts a given melody to a timed phrase.
+Merges a list of phrases into a single phrase.
 ### Arguments
-- `melody` in note numbers
-- `rhythm` in note length numbers (list must be the same length as the number of notes)
+- `phrases` is a list that contains two or more phrases.
 ### Syntax
-`(make-phrase melody rhythm)`
+`(merge-phraselist phrases)`
+
+
+## `repeat-phrase`
+
+### Description
+Helper function. Repeats a phrase a given number of times.
+### Arguments
+- `phrase` is a phrase that should be repeated
+- `repeats` is the number of times a given phrase should be repeated
+### Syntax
+`(repeat-phrase phrase repeats)`
+
+
+## `reverse-phrase`
+
+### Description
+Reverses a given phrase.
+### Arguments
+- `phrase` is a phrase that should be repeated
+### Syntax
+`(reverse-phrase phrase)`
+
+
+## `apply-transform`
+
+### Description
+Applies (a) transformation function(s) to a list of notes. Note: all arguments must be supplied, either with values or as an empty expression `'()`.
+### Arguments
+- `list` is a list of notes to transform
+- `parallel-function` is the function to be applied to every parallel block
+- `serial-function` is the function to be applied to every serial block
+- `note-function` is the function to be applied to every note
+### Syntax
+`(apply-transform list parallel-function serial-function note-function)`
