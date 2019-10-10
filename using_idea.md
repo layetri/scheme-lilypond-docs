@@ -34,6 +34,13 @@ It's now time to install the Scheme plugin. Here's the basic steps:
 #### Creating a working directory for Scheme exercises
 This is a step for HKU students: because it's kinda useful to keep all your work in one place, I recommend you to create a new project in IDEA and storing all your Scheme stuff in it. Note that this folder name must not contain spaces in order for Racket to work.
 
+#### Setting up IDEA to use Bash (Windows only)
+Because IDEA on Windows uses the native cmd.exe, which doesn't support our Racket installation, we need to set it to use Ubuntu Bash. Here's how to do it:
+1. Open `Settings` > `Tools` > `Terminal`
+1. Find the Shell Path and change it to `bash.exe`
+
+Now IDEA will use Bash as the default terminal, allowing you to execute your Racket files.
+
 #### Creating a run configuration for Racket
 When you've created your new project, it's time to add some useful shortcuts for Racket.
 1. Open `Settings` > `Tools` > `External Tools`
