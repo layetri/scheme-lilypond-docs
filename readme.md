@@ -88,7 +88,7 @@ Transposes a list of natural notes symbolically.
 Transposes a natural note numerically.
 ### Arguments
 - `note` is a natural note as a note number
-- `steps` is the amount of tones to transpose by
+- `steps` is the number of semitones to transpose by
 ### Syntax
 `(transpose-note note)`
 
@@ -99,7 +99,7 @@ Transposes a natural note numerically.
 Transposes a `phrase` from `make-phrase` numerically.
 ### Arguments
 - `phrase` is the output of `make-phrase`
-- `steps` is the amount of tones to transpose by
+- `steps` is the number of semitones to transpose by
 ### Syntax
 `(make-phrase phrase steps)`
 
@@ -162,7 +162,7 @@ Helper function. Repeats a phrase a given number of times.
 ### Description
 Reverses a given phrase.
 ### Arguments
-- `phrase` is a phrase that should be repeated
+- `phrase` is a phrase that should be reversed
 ### Syntax
 `(reverse-phrase phrase)`
 

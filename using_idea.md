@@ -2,7 +2,7 @@
 
 ### Introduction
 This document aims at providing a comprehensive guide to get the Scheme language up and running within the IntelliJ IDEA IDE from JetBrains.
-Note: I'll be updating this guide for Windows, as the current walkthrough is macOS-only. Second note: This guide assumes you already have installed Racket on your system.
+Note: I'll be updating this guide for Windows, as the current walkthrough is macOS-only. Second note: This guide assumes you have already installed Racket on your system.
 
 ### Table of Contents
 1. [Links](#links)
