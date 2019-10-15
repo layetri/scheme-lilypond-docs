@@ -2,12 +2,19 @@
 
 (provide melody-modulate)
 
-(define mel '(a b c d e c d))
 
 (define (find-modus melody) (
-                                ; it takes the last note in the melody
-                                last melody
-                                     ))
+    ; it takes the last note in the melody
+    last melody
+ ))
+
+(define (subst fsym tsym lst)
+    (cond
+        [(null? lst) lst]
+        [(eq? (first lst) fsym) (cons tsym (subst fsym tsym (rest lst)))]
+        [else (cons (first lst)(subst fsym tsym (rest lst)))]
+    )
+)
 
 (define modes (make-hash))
 (hash-set! modes "d" '(d e f g a b c))
@@ -22,27 +29,19 @@
 
 (define (melody-modulate melody mode)
     (cond (not (equal? mode (symbol->string (find-modus melody)))
-       (
-           ; for each note in melody
-           for/list ([i (in-range (length melody))])
-                (begin
-                    ;get note at current position
-                    ;                    (define note (list-ref melody i))
+           (begin
+               (subst '(bes) '(b) melody)
 
-                    (define scale (hash-ref modes (symbol->string (find-modus melody))))
-                    (define position (index-of scale (list-ref melody i)))
-                    (list-ref (hash-ref modes mode) position)
+               (define scale (hash-ref modes (symbol->string (find-modus melody))))
 
-                    ;get position of note in current mode
-                    ;                    (displayln (hash-ref modes current-mode))
-                    )
-
-                ; get position in current mode
-
-                ; find note at position in new mode
-
-                ; append to new melody
-                )
-            )
+               ; for each note in melody
+               (for/list ([i (in-range (length melody))])
+                     (begin
+                         (define position (index-of scale (list-ref melody i)))
+                         (list-ref (hash-ref modes mode) position)
+                     )
+                 )
+           )
         )
     )
+)
